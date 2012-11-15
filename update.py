@@ -58,6 +58,10 @@ pprint.pprint(tree)
 resp = client.post(url + "/git/commits", data=json.dumps({
     'message': "Update timestamp",
     'tree': tree['sha'],
+    'author': {
+        'name': "Continuum Bot",
+        'email': "continuum@example.com",
+    },
     'parents': [ master['object']['sha'] ],
     }))
 
